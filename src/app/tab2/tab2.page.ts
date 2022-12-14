@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AlertController } from '@ionic/angular';
+import { DataLocalService } from '../services/data-local.service';
 
 @Component({
   selector: 'app-tab2',
@@ -7,6 +9,27 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  constructor() {}
+  constructor( public dataLocal: DataLocalService,private alert:AlertController ) {}
+
+  // abrirRegistro(registro:any){
+  //   console.log("Registro",registro);
+  //   let text = registro.split(";")
+  //   this.presentAlert(registroArray);
+  // }
+
+  async viewInformation(registro:any) {
+    console.log("Registro",registro);
+    let text = registro.split(";")
+    const alert = await this.alert.create({
+      header: 'Information',
+      subHeader:'Producto: ' + text[1],
+      message: 'Cantidad: '+ text[4]
+              +'\nMarca: '+ text[3]
+              +'\nTipo: '+text[2],
+      buttons: ['OK'],
+    });
+
+    await alert.present();
+  }
 
 }

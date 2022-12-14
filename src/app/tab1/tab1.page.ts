@@ -13,7 +13,7 @@ export class Tab1Page {
 
   Scan(){
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+      console.log('Barcode data', barcodeData.text);
       this.dataLocal.guardarRegistro(barcodeData.format, barcodeData.text);
      }).catch(err => {
       console.log('Error', err);
