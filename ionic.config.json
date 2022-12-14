@@ -1,5 +1,5 @@
 {
-  "name": "app-scanner1",
+  "name": "scanner",
   "integrations": {
     "capacitor": {}
   },

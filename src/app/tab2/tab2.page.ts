@@ -11,25 +11,24 @@ export class Tab2Page {
 
   constructor( public dataLocal: DataLocalService,private alert:AlertController ) {}
 
-  // abrirRegistro(registro:any){
+  abrirRegistro(registro:any){
+    console.log("Registro",registro);
+    // let text = registro.split(";")
+    // this.presentAlert(registroArray);
+  }
+
+  // async viewInformation(registro: any) {
   //   console.log("Registro",registro);
   //   let text = registro.split(";")
-  //   this.presentAlert(registroArray);
+  //   const alert = await this.alert.create({
+  //     header: 'Information',
+  //     subHeader:'Producto: ' + text[1],
+  //     message: 'Cantidad: '+ text[4]
+  //             +'\nMarca: '+ text[3]
+  //             +'\nTipo: '+text[2],
+  //     buttons: ['OK'],
+  //   });
+  //   await alert.present();
   // }
-
-  async viewInformation(registro:any) {
-    console.log("Registro",registro);
-    let text = registro.split(";")
-    const alert = await this.alert.create({
-      header: 'Information',
-      subHeader:'Producto: ' + text[1],
-      message: 'Cantidad: '+ text[4]
-              +'\nMarca: '+ text[3]
-              +'\nTipo: '+text[2],
-      buttons: ['OK'],
-    });
-
-    await alert.present();
-  }
 
 }
