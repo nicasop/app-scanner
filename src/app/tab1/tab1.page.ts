@@ -17,7 +17,7 @@ export class Tab1Page {
       this.dataLocal.guardarRegistro(barcodeData.format, barcodeData.text);
      }).catch(err => {
       console.log('Error', err);
-      this.dataLocal.guardarRegistro("http", "http://www.ups.edu.ec");
+      this.dataLocal.guardarRegistro("geo", "geo:-01414100,251451114");
      });
   }
 

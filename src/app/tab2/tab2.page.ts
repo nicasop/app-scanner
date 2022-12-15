@@ -13,6 +13,7 @@ export class Tab2Page {
 
   abrirRegistro(registro:any){
     console.log("Registro",registro);
+    this.dataLocal.abrirRecurso(registro);
     // let text = registro.split(";")
     // this.presentAlert(registroArray);
   }
