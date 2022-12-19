@@ -1,5 +1,5 @@
 {
-  "name": "app-scanner1",
+  "name": "scanner",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -34,6 +34,7 @@
     "cordova-plugin-inappbrowser": "^5.0.0",
     "cordova-plugin-nativestorage": "^2.3.2",
     "ionicons": "^6.0.3",
+    "leaflet": "^1.9.3",
     "phonegap-plugin-barcodescanner": "^8.1.0",
     "rxjs": "^6.5.0",
     "tslib": "^2.3.0",
@@ -53,6 +54,7 @@
     "@ionic/angular-toolkit": "^6.0.0",
     "@ionic/lab": "3.2.15",
     "@types/jasmine": "~4.0.0",
+    "@types/leaflet": "^1.9.0",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",
     "@typescript-eslint/parser": "5.3.0",

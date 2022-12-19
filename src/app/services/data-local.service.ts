@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { Registro } from "../models/registro.models";
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
@@ -11,7 +11,7 @@ export class DataLocalService {
 
   historial: Registro[] = [];
 
-  constructor( private navCtrl: NavController, private nativeStorage:NativeStorage,private browser:InAppBrowser ) { 
+  constructor( private navCtrl: NavController, private nativeStorage:NativeStorage,private browser:InAppBrowser, private toast: ToastController ) { 
     this.cargarDatos();
    }
 
@@ -35,6 +35,19 @@ export class DataLocalService {
       case 'geo':
         this.navCtrl.navigateForward(`/tabs/tab2/mapa/${registro.text}`);
         break;
+      default:
+        this.showToast('bottom');
+        break;
     }
   }
+
+
+  async showToast(position: 'top' | 'middle' | 'bottom'){
+    const toast = await this.toast.create({
+      message: 'Error al scannear código QR',
+      duration: 1500,
+      position: position
+    });
+    await toast.present();
+  } 
 }

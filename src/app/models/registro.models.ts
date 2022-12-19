@@ -18,7 +18,7 @@ export class Registro{
                 this.icon = 'earth-outline';
                 this.type = 'http';
                 break;
-            case 'geo':
+            case 'geo:':
                 this.icon = 'map-outline';
                 this.type = 'geo';
                 break;
