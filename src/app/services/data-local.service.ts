@@ -28,7 +28,7 @@ export class DataLocalService {
   }
 
   abrirRecurso(registro: Registro){
-    switch(registro.format){
+    switch(registro.type){
       case 'http':
         this.browser.create(registro.text,'_System');
         break;
